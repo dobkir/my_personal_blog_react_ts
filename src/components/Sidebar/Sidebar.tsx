@@ -87,7 +87,7 @@ export function Sidebar() {
 
       <div className={styles.sidebar__footer}>
         <NavLink to="/works" className={`${styles.btn} ${styles['btn--red']}`}>Мои работы</NavLink>
-        {/* <button className={`${styles.btn} ${styles['btn--blue']}`} type="button" data-modal="contact-modal">Написать мне</button> */}
+        <button className={`${styles.btn} ${styles['btn--blue']}`} type="button" data-modal="contact-modal">Написать мне</button>
       </div>
     </aside>
     //  {/* <!-- /.sidebar --> */ }

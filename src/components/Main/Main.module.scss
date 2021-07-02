@@ -1,0 +1,476 @@
+@import "../../index.scss";
+
+.main {
+  padding: 10rem 0 8rem $sidebar-width;
+
+  @include breakpoint ($tablet-bp) {
+    padding: 7rem 0 5rem;
+  }
+}
+
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-left: 5rem;
+  padding-right: 5rem;
+
+  @include breakpoint($mobile-bp) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+
+
+// ============== Stories ============= //
+
+.stories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 13px;
+  grid-template-rows: 195px;
+
+  margin-bottom: 3rem;
+
+  @include breakpoint($mobile-bp) {
+    grid-template-columns: 14rem 14rem 14rem 14rem;
+    overflow: auto;
+  }
+}
+
+.stories__item {
+  overflow: hidden;
+  position: relative;
+
+  border-radius: 5px;
+  filter: drop-shadow(0px 2px 10px rgba($black, .5));
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(to bottom, rgba($black, .7),
+        rgba($black, 0) 50%,
+        rgba($black, .7));
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  &:hover {
+    .stories__preview {
+      transform: scale(1.3);
+      transition-duration: 3s;
+    }
+  }
+}
+
+.stories__preview {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  transition: transform 1s ease-in-out;
+}
+
+.stories__title,
+.stories__date {
+  width: 100%;
+  padding: 1.4rem;
+
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  color: $white;
+
+  position: absolute;
+  left: 0;
+  z-index: 3;
+}
+
+.stories__title {
+  top: 0;
+}
+
+.stories__date {
+  text-align: right;
+
+  bottom: 0;
+}
+
+// =========== End of Stories ========== //
+
+
+
+// ============== Add post ============= //
+
+.add-post__form {
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+
+  display: flex;
+  align-items: flex-end;
+
+  background-color: $secondary;
+  box-shadow: 0px 15px 25px rgba($black, .45);
+  border-radius: 5px;
+
+  @include breakpoint($mobile-bp) {
+    padding: 1.5rem;
+  }
+}
+
+.add-post__textarea {
+  display: block;
+  flex-grow: 1;
+  height: 34px;
+  overflow: hidden;
+
+  border: none;
+  background: transparent;
+  resize: none;
+
+  font-size: 1.5rem;
+  color: $white;
+  font-family: inherit;
+
+  &::placeholder {
+    color: #D2D2D2;
+  }
+}
+
+.add-post__form-actions {
+  width: 12rem;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+
+  @include breakpoint($mobile-bp) {
+    width: 9rem;
+  }
+}
+
+.add-post__file,
+.add-post__send {
+  display: block;
+  width: 4.4rem;
+  height: 4.4rem;
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  transition: background-color .2s linear;
+
+  @include breakpoint($mobile-bp) {
+    width: 3.4rem;
+    height: 3.4rem;
+  }
+}
+
+.add-post__file {
+  background: #EBEBEB center no-repeat;
+
+  input {
+    display: none;
+  }
+
+  &:hover {
+    background-color: darken(#EBEBEB, 5%);
+  }
+
+  @include breakpoint($mobile-bp) {
+    background-size: 1.8rem;
+  }
+}
+
+.add-post__send {
+  margin-left: 1.5rem;
+
+  font-size: 0;
+  color: transparent;
+
+  background: $blue center no-repeat;
+
+  &:hover {
+    background-color: darken($blue, 5%);
+  }
+
+  @include breakpoint($mobile-bp) {
+    background-size: 1.5rem;
+  }
+}
+
+// =========== End of Add post ========== //
+
+
+
+// ================ Post =============== //
+
+.post {
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  overflow: hidden;
+
+  background-color: $primary;
+  box-shadow: 0 15px 25px rgba($black, .35);
+  border-radius: 5px;
+
+  @include breakpoint($mobile-bp) {
+    padding: 1.5rem;
+  }
+}
+
+.post__header {
+  margin: 0 0 2.5rem;
+
+  &--preview {
+    margin: -2.5rem -2.5rem 2.5rem;
+  }
+}
+
+.post__preview {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.post__content {
+  margin-bottom: 2rem;
+}
+
+.post__title {
+  margin-bottom: 1.5rem;
+
+  font-size: 1.8rem;
+  line-height: 1.4;
+  color: $white;
+  font-weight: 500;
+
+  a {
+    color: inherit;
+  }
+
+  &--open {
+    margin-bottom: .75rem;
+  }
+}
+
+.post__subtitle {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  font-size: 1.6rem;
+  color: $white;
+  font-weight: 500;
+}
+
+.post__description {
+  font-size: 1.4rem;
+  color: #D2D2D2;
+
+}
+
+.post__text {
+  padding-bottom: 1rem;
+
+  font-size: 1.4rem;
+  color: $white;
+
+  border-bottom: 1px solid #1C1C1C;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 2rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1.25em;
+  }
+
+  h4 {
+    font-size: 1.15em;
+  }
+
+  h5,
+  h6 {
+    font-size: 1em;
+  }
+
+  ul,
+  ol {
+    margin-bottom: 2rem;
+  }
+
+  ol {
+    list-style: decimal;
+    list-style-position: inside;
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  a {
+    color: $blue;
+  }
+
+  table {
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.post__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include breakpoint($mobile-bp) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.post__data {
+  display: flex;
+
+  color: #828282;
+  line-height: 1.2;
+
+  a {
+    color: inherit;
+  }
+
+  @include breakpoint($mobile-bp) {
+    margin-bottom: 1rem;
+
+    font-size: 1.2rem;
+  }
+}
+
+.post__data-item {
+
+  &:not(:last-child)::after {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 1.5rem;
+    position: relative;
+    top: -2px;
+
+    border-radius: 50%;
+    background-color: #C4C4C4;
+  }
+}
+
+.post__read {
+  font-size: 1.4rem;
+  color: #107EFF;
+}
+
+.post__actions {
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 1.5rem;
+
+  font-size: 1.2rem;
+  color: $white;
+
+  a {
+    color: inherit;
+
+    opacity: .6;
+    transition: opacity .2s linear;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.post__actions-icon {
+  margin-left: .5rem;
+}
+
+// ============ End of Post =========== //
+
+
+
+// ============ Pagination =========== //
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+
+  @include breakpoint($tablet-bp) {
+    margin-top: 5rem;
+  }
+}
+
+.pagination__item {
+  margin: 0 .5rem;
+
+  &.active {
+    margin: 0 .6rem;
+  }
+}
+
+.pagination__link {
+  display: block;
+  width: 40px;
+  height: 40px;
+
+  background-color: #0D0D0D;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px rgba($black, .15);
+
+  font-size: 1.4rem;
+  line-height: 40px; //контент по высоте в центр
+  color: $white;
+  text-align: center;
+  text-decoration: none;
+
+  transition: background-color .2s linear;
+
+  &:hover {
+    background-color: lighten(#0D0D0D, 5%);
+  }
+
+  &.active {
+    margin: 0 .6rem;
+
+    background-color: $blue;
+    box-shadow: 0px 0px 10px rgba($blue, .15);
+
+    transform: scale(1.3);
+  }
+}
+
+// ======== End of Pagination ======= //
