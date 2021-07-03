@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import "../../main-scss/global.scss";
 
 .main {
   padding: 10rem 0 8rem $sidebar-width;
@@ -43,7 +43,7 @@
   position: relative;
 
   border-radius: 5px;
-  filter: drop-shadow(0px 2px 10px rgba($black, .5));
+  filter: drop-shadow(0px 2px 10px rgba($customBlack, .5));
   cursor: pointer;
 
   &::after {
@@ -52,9 +52,9 @@
     width: 100%;
     height: 100%;
 
-    background-image: linear-gradient(to bottom, rgba($black, .7),
-        rgba($black, 0) 50%,
-        rgba($black, .7));
+    background-image: linear-gradient(to bottom, rgba($customBlack, .7),
+        rgba($customBlack, 0) 50%,
+        rgba($customBlack, .7));
 
     position: absolute;
     top: 0;
@@ -91,7 +91,7 @@
 
   font-size: 1.2rem;
   line-height: 1.4rem;
-  color: $white;
+  color: $customWhite;
 
   position: absolute;
   left: 0;
@@ -122,7 +122,7 @@
   align-items: flex-end;
 
   background-color: $secondary;
-  box-shadow: 0px 15px 25px rgba($black, .45);
+  box-shadow: 0px 15px 25px rgba($customBlack, .45);
   border-radius: 5px;
 
   @include breakpoint($mobile-bp) {
@@ -141,7 +141,7 @@
   resize: none;
 
   font-size: 1.5rem;
-  color: $white;
+  color: $customWhite;
   font-family: inherit;
 
   &::placeholder {
@@ -179,7 +179,17 @@
 }
 
 .add-post__file {
-  background: #EBEBEB center no-repeat;
+  background: #EBEBEB;
+
+  position: relative;
+
+  img {
+    position: absolute;
+    top: calc(50% - (22px / 2));
+    left: calc(50% - (22px / 2));
+
+    transition: transform .8s ease-in-out;
+  }
 
   input {
     display: none;
@@ -187,6 +197,11 @@
 
   &:hover {
     background-color: darken(#EBEBEB, 5%);
+
+    img {
+      transform: scale(1.3);
+    }
+
   }
 
   @include breakpoint($mobile-bp) {
@@ -196,14 +211,30 @@
 
 .add-post__send {
   margin-left: 1.5rem;
+  padding: 1.1rem;
 
   font-size: 0;
   color: transparent;
 
-  background: $blue center no-repeat;
+  background: $customBlue;
+
+  position: relative;
+
+  img {
+    position: absolute;
+    top: calc(50% - (17px / 2));
+    left: calc(50% - (17px / 2));
+
+    transition: transform .8s ease-in-out;
+  }
 
   &:hover {
-    background-color: darken($blue, 5%);
+    background-color: darken($customBlue, 5%);
+
+    img {
+      transform: scale(1.3);
+    }
+
   }
 
   @include breakpoint($mobile-bp) {
@@ -223,7 +254,7 @@
   overflow: hidden;
 
   background-color: $primary;
-  box-shadow: 0 15px 25px rgba($black, .35);
+  box-shadow: 0 15px 25px rgba($customBlack, .35);
   border-radius: 5px;
 
   @include breakpoint($mobile-bp) {
@@ -254,7 +285,7 @@
 
   font-size: 1.8rem;
   line-height: 1.4;
-  color: $white;
+  color: $customWhite;
   font-weight: 500;
 
   a {
@@ -271,7 +302,7 @@
   margin-bottom: 2rem;
 
   font-size: 1.6rem;
-  color: $white;
+  color: $customWhite;
   font-weight: 500;
 }
 
@@ -285,7 +316,7 @@
   padding-bottom: 1rem;
 
   font-size: 1.4rem;
-  color: $white;
+  color: $customWhite;
 
   border-bottom: 1px solid #1C1C1C;
 
@@ -330,7 +361,7 @@
   }
 
   a {
-    color: $blue;
+    color: $customBlue;
   }
 
   table {
@@ -400,7 +431,7 @@
   margin-bottom: 1.5rem;
 
   font-size: 1.2rem;
-  color: $white;
+  color: $customWhite;
 
   a {
     color: inherit;
@@ -419,6 +450,38 @@
 }
 
 // ============ End of Post =========== //
+
+
+
+// =============== Embed ============== //
+
+.embed,
+.fr-video {
+  display: block;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+  }
+
+  iframe,
+  video,
+  object,
+  embed {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+}
+
+// =========== End of Embed ========== //
 
 
 
@@ -449,11 +512,11 @@
 
   background-color: #0D0D0D;
   border-radius: 3px;
-  box-shadow: 0px 0px 10px rgba($black, .15);
+  box-shadow: 0px 0px 10px rgba($customBlack, .15);
 
   font-size: 1.4rem;
   line-height: 40px; //контент по высоте в центр
-  color: $white;
+  color: $customWhite;
   text-align: center;
   text-decoration: none;
 
@@ -466,8 +529,8 @@
   &.active {
     margin: 0 .6rem;
 
-    background-color: $blue;
-    box-shadow: 0px 0px 10px rgba($blue, .15);
+    background-color: $customBlue;
+    box-shadow: 0px 0px 10px rgba($customBlue, .15);
 
     transform: scale(1.3);
   }

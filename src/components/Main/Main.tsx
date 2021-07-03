@@ -36,16 +36,18 @@ export function Main() {
         {/* <!-- /.stories --> */}
 
         {/* <!-- Add post --> */}
-        {/*                 <!-- It's for admin of the web-site. Textarea for fast posted someth -->
-                <!-- This area must be unvisible for users without admin's permissions --> */}
-        <div className={styles['add-post']}>
-          <form className={styles['add-post__form']} action="/" method="post">
-            <textarea className={styles['add-post__textarea']} name="post-text" placeholder="Напишите что-нибудь" data-autoresize></textarea>
-            <div className={styles['add-post__form-actions']}>
-              <label className={styles['add-post__file']} htmlFor="add-post-file" style={{ backgroundImage: "url('/images/add-photo.svg')" }}>
+        {/*                 <!-- It"s for admin of the web-site. Textarea for fast posted someth -->
+                <!-- This area must be unvisible for users without admin"s permissions --> */}
+        <div className={styles["add-post"]}>
+          <form className={styles["add-post__form"]} action="/" method="post">
+            <textarea className={styles["add-post__textarea"]} name="post-text" placeholder="Напишите что-нибудь" data-autoresize></textarea>
+            <div className={styles["add-post__form-actions"]}>
+              <label className={styles["add-post__file"]} htmlFor="add-post-file">
+                <img src="/images/add-photo.svg" alt="Add photos icon" />
                 <input type="file" id="add-post-file" />
               </label>
-              <button className={styles['add-post__send']} type="submit" style={{ backgroundImage: "url('/images/send.svg')" }}>
+              <button className={styles["add-post__send"]} type="submit">
+                <img src="/images/send.svg" alt="Seng message icon" />
                 Отправить
               </button>
             </div>
@@ -63,7 +65,7 @@ export function Main() {
           </div>
           <div className={styles.post__footer}>
             <ul className={styles.post__data}>
-              <li className={styles['post__data-item']}>
+              <li className={styles["post__data-item"]}>
                 <time dateTime="2020-06-21 14:35">21.06.2020</time>
               </li>
             </ul>
@@ -74,7 +76,7 @@ export function Main() {
         {/* <!-- Post 2 --> */}
 
         <article className={styles.post}>
-          <div className={`${styles.post__header} ${styles['post__header--preview']}`}>
+          <div className={`${styles.post__header} ${styles["post__header--preview"]}`}>
             <NavLink to="/post">
               <img className={styles.post__preview} src="/images/post-2.webp" alt="Как писать код быстро и безболезненно?" />
             </NavLink>
@@ -93,10 +95,10 @@ export function Main() {
 
           <div className={styles.post__footer}>
             <ul className={styles.post__data}>
-              <li className={styles['post__data-item']}>
+              <li className={styles["post__data-item"]}>
                 <time dateTime="2020-06-21 14:35">21.06.2020</time>
               </li>
-              <li className={styles['post__data-item']}>
+              <li className={styles["post__data-item"]}>
                 <NavLink to="/post">создание сайтов</NavLink>
               </li>
             </ul>
@@ -130,10 +132,10 @@ export function Main() {
 
           <div className={styles.post__footer}>
             <ul className={styles.post__data}>
-              <li className={styles['post__data-item']}>
+              <li className={styles["post__data-item"]}>
                 <time dateTime="2020-06-21 14:35">21.06.2020</time>
               </li>
-              <li className={styles['post__data-item']}>
+              <li className={styles["post__data-item"]}>
                 <NavLink to="/post">продвижение видео</NavLink>
               </li>
             </ul>
@@ -148,7 +150,7 @@ export function Main() {
         {/* <!-- Post 4 --> */}
 
         <article className={styles.post}>
-          <div className={`${styles.post__header} ${styles['post__header--preview']}`}>
+          <div className={`${styles.post__header} ${styles["post__header--preview"]}`}>
             <NavLink to="/post">
               <img className={styles.post__preview} src="/images/post-4.webp" alt="Как я сходил на FrontEnd Conf 2021" />
             </NavLink>
@@ -167,10 +169,10 @@ export function Main() {
 
           <div className={styles.post__footer}>
             <ul className={styles.post__data}>
-              <li className={styles['post__data-item']}>
+              <li className={styles["post__data-item"]}>
                 <time dateTime="2020-06-21 14:35">21.06.2020</time>
               </li>
-              <li className={styles['post__data-item']}>
+              <li className={styles["post__data-item"]}>
                 <NavLink to="/post">создание сайтов</NavLink>
               </li>
             </ul>

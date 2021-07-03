@@ -58,9 +58,8 @@ export function Header() {
           {/* <!-- /.nav_list --> */}
         </nav>
         {/* <!-- /.nav --> */}
-        <div className={styles.search}>It's place for Search form</div>
-        <form className="search" action="search.html" method="get">
-          <input className="search__input" type="text" placeholder="Поиск по блогу" />
+        <form className={styles.search} action="search.html" method="get">
+          <input className={styles.search__input} type="text" placeholder="Поиск по блогу" />
         </form>
       </div>
       {/* <!-- /.header_right --> */}

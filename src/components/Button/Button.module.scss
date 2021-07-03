@@ -1,0 +1,67 @@
+@import "../../main-scss/global.scss";
+
+.button {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1.1em 2.1em;
+
+  background: $secondary;
+  border: none;
+  cursor: pointer;
+  border-radius: 2.1em;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  font-weight: 500;
+  color: $customWhite;
+  text-decoration: none;
+
+  transition: background-color .2s linear;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:disabled,
+  &:disabled:hover {
+    background-color: $customGray;
+    cursor: default;
+  }
+}
+
+.buttonRed {
+  background-color: $customRed;
+  box-shadow: 0 7px 17px -10px rgba($customRed, .3);
+
+  &:hover,
+  &:focus {
+    background-color: darken($customRed, 10%);
+  }
+
+  &:active {
+    background-color: darken($customRed, 15%);
+  }
+
+  a {
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.buttonBlue {
+  background-color: $customBlue;
+  box-shadow: 0 7px 17px -10px rgba($customBlue, .3);
+
+  &:hover,
+  &:focus {
+    background-color: darken($customBlue, 10%);
+  }
+
+  &:active {
+    background-color: darken($customBlue, 15%);
+  }
+}

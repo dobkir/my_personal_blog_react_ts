@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom"
-
 import styles from "./Sidebar.module.scss"
+
+import { Button } from "./../Button/Button"
 
 export function Sidebar() {
   return (
@@ -46,7 +47,7 @@ export function Sidebar() {
         {/* <!-- /.profile --> */}
 
         {/* <!-- nav--mobile --> */}
-        <nav className={`${styles.nav} ${styles['nav--mobile']}`}>
+        <nav className={`${styles.nav} ${styles["nav--mobile"]}`}>
           <ul className={styles.nav__list}>
             <li className={styles.nav__item}>
               <a className={styles.nav__link} href="index.html">Главная</a>
@@ -86,8 +87,12 @@ export function Sidebar() {
       {/* <!-- /.sidebar__content --> */}
 
       <div className={styles.sidebar__footer}>
-        <NavLink to="/works" className={`${styles.btn} ${styles['btn--red']}`}>Мои работы</NavLink>
-        <button className={`${styles.btn} ${styles['btn--blue']}`} type="button" data-modal="contact-modal">Написать мне</button>
+        <Button color="red" onClick={() => alert('It was a click on the red button')}>
+          <NavLink to="/works">Мои работы</NavLink>
+        </Button>
+        <Button color="blue" onClick={() => alert('It was a click on the blue button')}>
+          Написать мне
+        </Button>
       </div>
     </aside>
     //  {/* <!-- /.sidebar --> */ }
